@@ -22,4 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/users', function () {
    return QueryBuilder::for(User::class)->allowedFilters((new User)->getTableColumns())->paginate();
-});
+})->name('api.users.index');
